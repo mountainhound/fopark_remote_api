@@ -8,19 +8,19 @@ class StallModel(db.Model):
 	lot_id = db.Column(db.String(80))
 	stall_id = db.Column(db.Integer)
 	cam_id = db.Column(db.String(80))
-	status = db.Column(db.Integer,primary_key=True)
-	rt_time = db.Column(db.Integer) 
+	status = db.Column(db.Integer)
+	time_stamp = db.Column(db.Integer) 
 	
 
-	def __init__(self,lot_id,stall_id,cam_id,status,rt_time):
+	def __init__(self,lot_id,stall_id,cam_id,status,time_stamp):
 		self.lot_id = lot_id
 		self.stall_id = stall_id
 		self.cam_id = cam_id
 		self.status = status
-		self.rt_time = rt_time
+		self.time_stamp = time_stamp
 
 	def json(self):
-		return {'lot_id': self.lot_id,'stall_id':self.stall_id,'cam_id':self.cam_id,'status':self.status,'rt_time':self.rt_time}
+		return {'lot_id': self.lot_id,'stall_id':self.stall_id,'cam_id':self.cam_id,'status':self.status,'time_stamp':self.time_stamp}
 
 	@classmethod
 	def find_by_stall_id(cls,lot_id,stall_id):
