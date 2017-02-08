@@ -9,16 +9,18 @@ class User_StatsModel(db.Model):
 	rt_time = db.Column(db.Integer)
 	ct_time = db.Column(db.Integer)
 	request_sum = db.Column(db.Integer)
+	pic_sum = db.Column(db.Integer)
 	
 
-	def __init__(self,user_id,rt_time,ct_time,request_sum):
+	def __init__(self,user_id,rt_time,ct_time,request_sum,pic_sum):
 		self.user_id = user_id
 		self.rt_time = rt_time
 		self.ct_time = ct_time
 		self.request_sum = request_sum
+		self.pic_sum = pic_sum
 
 	def json(self):
-		return {'user_id': self.user_id,'rt_time':self.rt_time,'ct_time':self.ct_time,'request_sum':self.request_sum}
+		return {'user_id': self.user_id,'rt_time':self.rt_time,'ct_time':self.ct_time,'request_sum':self.request_sum,'pic_sum':self.pic_sum}
 
 	@classmethod
 	def find_by_user_id(cls,user_id):

@@ -17,8 +17,14 @@ class User_Stats(Resource):
 	parser.add_argument('request_sum',
 		type= int, 
 		required = True,
-		help = 'Total Number of Photos Corrected')
-	
+		help = 'Total Number of Requests Sent'
+		)
+	parser.add_argument('pic_sum',
+		type= int, 
+		required = True,
+		help = 'Total Number of Photos Corrected'
+		)
+
 	def get(self,user_id):
 		item = User_StatsModel.find_by_user_id(user_id)
 		if item: 
@@ -35,6 +41,7 @@ class User_Stats(Resource):
 			item.rt_time = data['rt_time']
 			item.ct_time = data['ct_time']
 			item.request_sum = data['request_sum']
+			item.pic_sum = data['pic_sum']
 		
 		item.save_to_db()
 
