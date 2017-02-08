@@ -12,7 +12,7 @@ class StallModel(db.Model):
 	rt_time = db.Column(db.Integer) 
 	
 
-	def __init__(self,lot_id,stall_id,cam_id,status,rt_time:
+	def __init__(self,lot_id,stall_id,cam_id,status,rt_time):
 		self.lot_id = lot_id
 		self.stall_id = stall_id
 		self.cam_id = cam_id
