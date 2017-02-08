@@ -1,4 +1,4 @@
 .DS_Store
 __pychach__/
 *.pyc
-data.db
+*.db
